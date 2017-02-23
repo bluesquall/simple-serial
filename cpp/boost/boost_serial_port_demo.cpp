@@ -42,7 +42,7 @@ using std::cin;
 // what baud rate do we communicate at
 serial_port_base::baud_rate BAUD(19200);
 // how big is each "packet" of data (default is 8 bits)
-serial_port_base::character_size CSIZE( 8 );
+// compile error on OSX serial_port_base::character_size CSIZE( 8 );
 // what flow control is used (default is none)
 serial_port_base::flow_control FLOW( serial_port_base::flow_control::none );
 // what parity is used (default is none)
@@ -60,7 +60,7 @@ int main()
 	// go through and set all the options as we need them
 	// all of them are listed, but the default values work for most cases
 	port.set_option( BAUD );
-	port.set_option( CSIZE );
+//	port.set_option( CSIZE );
 	port.set_option( FLOW );
 	port.set_option( PARITY );
 	port.set_option( STOP );
